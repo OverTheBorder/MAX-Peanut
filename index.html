@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AIM Bridge Test</title>
+</head>
+<body>
+    <script>
+        // Connect to your Node.js Bridge
+        const ws = new WebSocket('ws://overtheworld.duckdns.org:8081');
+
+        ws.onopen = () => {
+            console.log('Connected to the Bridge!');
+            ws.send(JSON.stringify({ action: "connect", username: "test_user" }));
+        };
+
+        ws.onmessage = (event) => {
+            // Log whatever JSON the bridge sends back from the AIM server
+            console.log('Message from Bridge:', JSON.parse(event.data));
+        };
+    </script>
+</body>
+</html>
