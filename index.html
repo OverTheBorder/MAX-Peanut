@@ -4,19 +4,14 @@
     <title>AIM Bridge Test</title>
 </head>
 <body>
-    <script>
-        // Connect to your Node.js Bridge
-        const ws = new WebSocket('ws://IP ADD HERE:8081');
+   <p>Your name</p>
+    <input type="text" id="nameInput">
 
-        ws.onopen = () => {
-            console.log('Connected to the Bridge!');
-            ws.send(JSON.stringify({ action: "connect", username: "test_user" }));
-        };
+    <p>Password</p>
+    <input type="password" id="passwordInput">
 
-        ws.onmessage = (event) => {
-            // Log whatever JSON the bridge sends back from the AIM server
-            console.log('Message from Bridge:', JSON.parse(event.data));
-        };
-    </script>
+    <button id="loginBtn">CONNEC TO PEANUT!</button>
+    
+    <script src="frontendscript.js"></script>
 </body>
 </html>
