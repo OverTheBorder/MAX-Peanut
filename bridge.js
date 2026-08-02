@@ -13,7 +13,7 @@ wss.on('connection', (ws) => {
 
     const aimSocket = new net.Socket();
 
-    aimSocket.connect(5190, 'overtheworld.duckdns.org', () => {
+    aimSocket.connect(5190, 'IP ADD HERE', () => {
         console.log('Connected to AIM Server via TCP')
     });
 
